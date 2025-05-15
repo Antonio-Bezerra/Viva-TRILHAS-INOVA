@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --cor-1: #B31405;
+    --cor-2: #CFCFCF;
+    --cor-3: #F7F9F9;
+    --cor-4: #FFFAF1;
+    --cor-5: #212529;
+    --cor-6: #495057;
+    --cor-7: #FFFFFF;
+
+    --weight-1: 400;
+    --weight-2: 700;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+/* CABEÇALHO */
+.cabecalho-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--cor-2);
+  padding: 0 121px;
+}
+
+.cabecalho-container a {
+    color: var(--cor-1);
+    text-decoration: none;
+}
+
+/* corpo */
+.conteudo-primeiro {
+    background: var(--cor-2);
+}
