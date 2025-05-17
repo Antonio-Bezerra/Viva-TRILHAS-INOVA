@@ -198,7 +198,8 @@ body{
 }
 
 .conteudo-quarto h2,
-.conteudo-quinto-div-1 h2 {
+.conteudo-quinto-div-1 h2,
+.conteudo-sexto-div-1 h2 {
     font-weight: var(--weight-2);
     font-size: 40px;
     color: var(--cor-6);
@@ -297,7 +298,36 @@ strong {
 }
 
 .conteudo-sexto {
+    display: flex;
     background-color: var(--cor-8);
+    padding: 150px 130px;
+    gap: 166px;
+    align-items: center;
+}
+
+.conteudo-sexto-div-2 {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.conteudo-sexto-div-4 {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.conteudo-sexto-paragrafo-negrito {
+    font-weight: var(--weight-2);
+    font-size: 16px;
+    color: var(--cor-6);
+}
+
+.conteudo-sexto-paragrafo {
+    font-weight: var(--weight-1);
+    font-size: 16px;
+    color: var(--cor-7);
 }
 
 .rodape{
