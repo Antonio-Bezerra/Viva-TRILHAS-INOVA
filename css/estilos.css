@@ -193,6 +193,71 @@ body{
 
 .conteudo-quarto {
     background-color: var(--cor-4);
+    justify-items: center;
+    padding: 40px 123px;
+}
+
+.conteudo-quarto h2 {
+    font-weight: var(--weight-2);
+    font-size: 40px;
+    color: var(--cor-6);
+    margin-bottom: 20px;
+}
+
+strong {
+    color: var(--cor-1);
+}
+
+.conteudo-quarto-paragrafo-1,
+.conteudo-quarto-paragrafo-5 {
+    font-weight: var(--weight-2);
+    font-size: 16px;
+    color: var(--cor-1);
+    margin-bottom: 3px;
+}
+
+.conteudo-quarto-div-1 {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 95px;
+    gap: 70px;
+}
+
+.conteudo-quarto-divs-2 {
+    border: 1px solid var(--cor-3);
+    background-color: var(--cor-8);
+    border-radius: 6px;
+    padding: 20px 24px;
+}
+
+.conteudo-quarto-divs-2 h3,
+.conteudo-quarto-div-4 h3 {
+    font-weight: var(--weight-2);
+    font-size: 24px;
+    color: var(--cor-6);
+    margin-bottom: 16px;
+}
+
+.conteudo-quarto-paragrafo-2,
+.conteudo-quarto-paragrafo-3,
+.conteudo-quarto-paragrafo-4 {
+    font-weight: var(--weight-1);
+    font-size: 14px;
+    color: var(--cor-7);
+    line-height: 1.5;
+}
+
+.conteudo-quarto-div-3 {
+    display: flex;
+    gap: 150px;
+    margin-top: 30px;
+}
+
+.conteudo-quarto-paragrafo-6 {
+    font-weight: var(--weight-1);
+    font-size: 16px;
+    color: var(--cor-7);
+    line-height: 1.5;
 }
 
 .conteudo-quinto {
