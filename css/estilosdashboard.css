@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --cor-1: #23306A;
+    --cor-2: #D1D1D1;
+    --cor-3: #F7F9F9;
+    --cor-4: #C7417B;
+    --cor-5: #FFFFFF;
+    --cor-6: #FAFFFC;
+    --cor-7: #2F2E2D;
+    --cor-8: #00B6CB;
+    --cor-9: #9C55EC;
+    --cor-10: #E9EEF4;
+    --cor-11: #3A3A3D;
+    --cor-12: #AAAAAA;
+    --cor-13: #AB6EEF;
+    --cor-14: #E6EDF5;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--cor-14);
+}
+
+/* cabeçalho */
+
+.cabecalho_container {
+   display: flex;
+   background-color: var(--cor-5); 
+   width: 1440px;
+   height: 264.35px;
+}
