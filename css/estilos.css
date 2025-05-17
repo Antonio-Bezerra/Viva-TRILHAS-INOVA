@@ -330,6 +330,22 @@ strong {
     color: var(--cor-7);
 }
 
+/* RODAPÉ */
 .rodape{
+    display: flex;
     background-color: var(--cor-1);
+    align-items: center;
+    gap: 787px;
+    padding: 26px 100px;
+}
+
+.rodape-div-1 p {
+    font-weight: var(--weight-1);
+    font-size: 14px;
+    color: var(--cor-5);
+    margin-left: 20px;
+}
+
+.rodape-div-2 a {
+    margin-left: 32px;
 }
