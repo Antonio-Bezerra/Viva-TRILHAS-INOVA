@@ -194,10 +194,11 @@ body{
 .conteudo-quarto {
     background-color: var(--cor-4);
     justify-items: center;
-    padding: 40px 123px;
+    padding: 40px 123px 0;
 }
 
-.conteudo-quarto h2 {
+.conteudo-quarto h2,
+.conteudo-quinto-div-1 h2 {
     font-weight: var(--weight-2);
     font-size: 40px;
     color: var(--cor-6);
@@ -209,7 +210,8 @@ strong {
 }
 
 .conteudo-quarto-paragrafo-1,
-.conteudo-quarto-paragrafo-5 {
+.conteudo-quarto-paragrafo-5,
+.conteudo-quinto-paragrafo {
     font-weight: var(--weight-2);
     font-size: 16px;
     color: var(--cor-1);
@@ -261,7 +263,37 @@ strong {
 }
 
 .conteudo-quinto {
+    display: flex;
     background-color: var(--cor-5);
+    padding: 150px 120px;
+    gap: 40px;
+}
+
+.conteudo-quinto-div-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 46px 20px;
+}
+
+.conteudo-quinto-divs-3 {
+    background-color: var(--cor-8);
+    border: 1px solid var(--cor-1);
+    border-radius: 6px;
+    padding: 24px;
+}
+
+.conteudo-quinto-divs-3 h3 {
+    font-weight: var(--weight-2);
+    font-size: 24px;
+    color: var(--cor-6);
+    margin: 16px 0;
+}
+
+.conteudo-quinto-divs-3 p {
+    font-weight: var(--weight-1);
+    font-size: 16px;
+    color: var(--cor-7);
+    line-height: 1.5;
 }
 
 .conteudo-sexto {
