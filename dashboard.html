@@ -1,33 +1,104 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viva +</title>
+    <title>Dashboard HIV/AIDS Brasil</title>
     <link rel="icon" type="image/png" href="./img/favicon-96x96.png" sizes="96x96" />
     <link rel="stylesheet" href="./css/estilosdashboard.css">
 </head>
-
 <body>
     <header>
-        <nav class="cabecalho_container">
-
-            <div class="logo_item">
-                <img src="./img/logo vermelha.svg" alt="Logo do Viva Mais">
-            </div>
-
-            <div class="cabecalho-segundo-div-1">
-                <h2>Painel de controle HIV</h2>
-                <p class="cabecalho-primeiro-paragrafo-1">Acompanhe em tempo real as estatísticas do GOV</p>
-            </div>
-        </nav>
+        <h1>Dashboard HIV/AIDS Brasil</h1>
+        <p class="subtitle">Dados epidemiológicos e acompanhamento</p>
     </header>
+    
+    <div class="container">
+        <div class="kpi-container">
+            <div class="kpi">
+                <div class="kpi-label">Casos em 2023</div>
+                <div class="kpi-value" id="total-cases">--</div>
+            </div>
+            <div class="kpi">
+                <div class="kpi-label">Óbitos em 2023</div>
+                <div class="kpi-value" id="total-deaths">--</div>
+            </div>
+            <div class="kpi">
+                <div class="kpi-label">Cobertura de tratamento</div>
+                <div class="kpi-value" id="treatment-coverage">--%</div>
+            </div>
+            <div class="kpi">
+                <div class="kpi-label">Meta 90-90-90</div>
+                <div class="kpi-value" id="meta-90">--%</div>
+            </div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <div class="card">
+                <h2 class="card-header">Casos por Estado (2023)</h2>
+                <div class="chart-container" id="uf-chart">
+                    <div class="loading">Carregando dados...</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-header">Tendência Anual</h2>
+                <div class="chart-container" id="annual-trend-chart">
+                    <div class="loading">Carregando dados...</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-header">Distribuição por Gênero</h2>
+                <div class="chart-container" id="gender-chart">
+                    <div class="loading">Carregando dados...</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-header">Faixa Etária</h2>
+                <div class="chart-container" id="age-chart">
+                    <div class="loading">Carregando dados...</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-header">Casos por Região</h2>
+            <div class="map-container" id="map">
+                <div class="loading">Carregando mapa...</div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-header">Dados Detalhados por UF</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Estado</th>
+                        <th>Casos</th>
+                        <th>Óbitos</th>
+                        <th>Taxa (por 100k)</th>
+                        <th>Cobertura</th>
+                    </tr>
+                </thead>
+                <tbody id="uf-table">
+                    <tr>
+                        <td colspan="5">Carregando dados...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Dados fornecidos pelo Ministério da Saúde e DATASUS | Atualizado em <span id="update-date">--/--/----</span></p>
+    </footer>
 
-    <main>
-        <section class="dashboard-bloco">
-            <div class="cabecalho-terceiro-div-1"></div>
-            <h3>Novas Infecções</h3>
-            <p class="dashboard-bloco .numero"></p>
-        </section>
-    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <script src="./js/dashboard.js"></script>
 </body>
+</html>
