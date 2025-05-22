@@ -1,8 +1,15 @@
 :root {
     --primary-color: #e63946;
+    --primary-dark: #c1121f;
     --secondary-color: #457b9d;
+    --secondary-dark: #1d3557;
     --light-color: #f1faee;
     --dark-color: #1d3557;
+    --background: #f8f9fa;
+    --text-color: #333;
+    --text-light: #666;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
 }
 
 * {
@@ -13,32 +20,110 @@
 }
 
 body {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: var(--background);
+    color: var(--text-color);
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 header {
-    background-color: var(--dark-color);
+    background-color: var(--secondary-dark);
     color: white;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h1 {
     margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
 }
 
 .subtitle {
     font-weight: normal;
     font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.laço-hiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color);
+    clip-path: polygon(
+        50% 0%, 60% 40%, 100% 40%, 
+        70% 60%, 80% 100%, 50% 75%, 
+        20% 100%, 30% 60%, 0% 40%, 
+        40% 40%
+    );
+    opacity: 0.1;
+    z-index: 1;
 }
 
 .container {
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
+}
+
+.data-source-info {
+    background-color: var(--light-color);
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    border-radius: 6px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.kpi-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.kpi {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+}
+
+.kpi:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.kpi-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+    transition: var(--transition);
+}
+
+.kpi-label {
+    font-size: 0.95rem;
+    color: var(--text-light);
 }
 
 .dashboard-grid {
@@ -50,26 +135,34 @@ h1 {
 
 .card {
     background: white;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.card-wide {
+    grid-column: span 2;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card-header {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-dark);
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 .chart-container {
     height: 300px;
     position: relative;
+    margin-top: 1rem;
 }
 
 .map-container {
@@ -77,78 +170,210 @@ h1 {
     background-color: #f0f0f0;
     border-radius: 8px;
     overflow: hidden;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .data-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
+    font-size: 0.9rem;
+    min-width: 600px;
 }
 
 .data-table th, .data-table td {
     padding: 0.75rem;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
 }
 
 .data-table th {
-    background-color: var(--dark-color);
+    background-color: var(--secondary-dark);
     color: white;
+    font-weight: normal;
+    position: sticky;
+    top: 0;
 }
 
 .data-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f8f9fa;
 }
 
-.kpi-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 1.5rem 0;
+.data-table tr:hover {
+    background-color: #f1f1f1;
 }
 
-.kpi {
-    text-align: center;
+.info-card {
+    background-color: var(--secondary-dark);
+    color: white;
+    margin-top: 1rem;
+}
+
+.info-card .card-header {
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.info-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-item {
     padding: 1rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    flex: 1;
-    min-width: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    transition: var(--transition);
 }
 
-.kpi-value {
-    font-size: 2rem;
-    font-weight: bold;
+.info-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.info-item h3 {
     color: var(--primary-color);
-    margin: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
 }
 
-.kpi-label {
+.info-item p {
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.legend {
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    line-height: 1.5;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+.legend h3 {
+    margin-bottom: 8px;
+    color: var(--secondary-dark);
     font-size: 0.9rem;
-    color: #666;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline-block;
+    border-radius: 3px;
 }
 
 footer {
     text-align: center;
-    padding: 1.5rem;
-    background-color: var(--dark-color);
+    padding: 2rem 1.5rem;
+    background-color: var(--secondary-dark);
     color: white;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
-.loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    font-size: 1.2rem;
-    color: #666;
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--primary-dark);
+}
+
+/* Tooltip para gráficos */
+.chart-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 100;
+    transition: all 0.1s ease;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsividade */
 @media (max-width: 768px) {
     .dashboard-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .card-wide {
+        grid-column: span 1;
+    }
+    
+    .kpi-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+    
+    .map-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .kpi-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-content {
+        grid-template-columns: 1fr;
+    }
+    
+    header {
+        padding: 1.5rem 1rem;
+    }
+    
+    .kpi-value {
+        font-size: 1.8rem;
     }
 }
