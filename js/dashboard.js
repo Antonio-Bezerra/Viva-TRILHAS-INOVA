@@ -232,13 +232,13 @@ function createGenderChart() {
     window.genderChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: ['Masculino', 'Feminino', 'Outros'],
+            labels: ['Masculino', 'Feminino'],
             datasets: [{
-                data: [data.male, data.female, data.other],
+                data: [data.male, data.female],
                 backgroundColor: [
                     '#457b9d',
-                    '#e63946',
-                    '#a8dadc'
+                    '#e63946'
+            
                 ],
                 borderWidth: 1,
                 hoverOffset: 10
